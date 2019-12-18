@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sean Slattery - Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!--Bootstrap 4 Icons -->
+  <!--REF: https://www.w3schools.com/bootstrap4/bootstrap_icons.asp-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+  <!--Style-->
+  <style>
+	#aboutMe, #education, #workExp, #projects, #personal, #skills, #hobbies{
+		margin-left: 	5em; 
+		padding-top:	5em;
+		padding-bottom: 5em;
+	}
+	
+	#grades
+	{
+		margin-left: 5em;
+		padding-top: 1em;
+		padding-bottom: 5em;
+	}
+	  
+	#welcomeButtons {
+		display: 		table;
+	}
+	
+	.fas-fa-user-friends{
+		float-left;
+	}
+	
+	.v-divider{
+		margin-left:5px;
+		margin-right:5px;
+		width:1px;
+		height:100%;
+		border-right:1px solid gray;
+	}
+	
+	.carousel-inner img{
+		width: 100%;
+		height: 100%;
+	}
+	
+  </style><!--End of Style-->
+  
+  <!--inline script to make and download a file-->
+  <!-- Ref: https://ourcodeworld.com/articles/read/189/how-to-create-a-file-and-generate-a-download-with-javascript-in-the-browser-without-a-server -->
+  <script>
+	function download(filename, text) {
+		var element = document.createElement('a');
+		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+		element.setAttribute('download', filename);
+
+		element.style.display = 'none';
+		document.body.appendChild(element);
+
+		element.click();
+
+		document.body.removeChild(element);
+		
+		// Start file download.
+		document.getElementById("dwn-btn").addEventListener("click", function(){
+			// Generate download of hello.txt file with some content
+			var text = document.getElementById("text-val").value;
+			var filename = "hello.txt";
+    
+			download(filename, text);	
+	}, false);
+  </script>
+  
+</head>
+<!-- Body -->
+<body>
+
+<!-- Navbar -->
+<!--Ref: https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Sean Slattery</a>
+  
+  <!-- Navbar Links - Jump to sect of page w/ "href#" tags -->
+  <ul class="nav navbar-nav nav-fill">
+    <li class="nav-item">
+      <a class="nav-link" href="#aboutMe">About Me</a>
+    </li>
+	
+	<!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Academic
+      </a>
+      <div class="dropdown-menu">
+	    <a class="dropdown-item" href="#education">Education</a>
+        <a class="dropdown-item" href="#grades">Grades</a>
+      </div>
+    </li>
+	
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Qualifications
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#workExp">Industry</a>
+        <a class="dropdown-item" href="#projects">Projects</a>
+        <a class="dropdown-item" href="#personal">Personal</a>
+      </div>
+    </li>
+	
+	<li class="nav-item">
+      <a class="nav-link" href="#skills">Skills</a>
+    </li>
+	
+	<li class="nav-item">
+      <a class="nav-link" href="#hobbies">Hobbies</a>
+    </li>
+	
+	<!-- About Page - For Documetation of Features -->
+	<li class="nav-item">
+      <a class="nav-link" href="About.html">About</a>
+    </li>		
+  </ul>
+</nav><!--End of Navbar-->
+
+<!--Jumbotron w/ Image background - Start Area -->
+<!--Ref: https://bootstrapcreative.com/pattern/jumbotron-background-image-opacity-bootstrap-4/ -->
+<div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://placeimg.com/1690/480/tech/grayscale)">
+	<div class="container">
+		<h1 class="display-4">Sean Slattery</h1>
+		<p class="lead">// Computer Science Student, Programmer, and Developer</p>
+		<hr class="my-4">
+		<p class="lead">// Welcome to my personal online Portfolio! Here is where you can view my technical skills, achievements, and hobbies!</p>
+	</div>
+</div><!--End of Jumbotron-->
+
+
+<!--About me-->
+<div id="aboutMe">
+	<h1 class="display-3">About Me</h1>
+<!--About Me - Grid Body -->
+		<div class="container-fluid">
+			<div class="row">
+				<!--Image Thumbnail-->
+				<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 v-divider">
+					<!--Image, Float Left & Thumbnailed-->
+					<img src="images/emu.png" class="img-thumbnail float-left" alt="thumbnail">
+					<p>Relax, I'm not an Emu!</p>
+					<p>I prefer not to have a thumbnail of my actual self for private reasons!</p>
+				</div>
+				<!-- About me Text -->
+				<div id ="aboutText">
+				<div class="col-sm-10 col-md-10 col-lg-10 col-xl-10">
+					<p class="text-left">Honours Computer Science Student studying in the Technological Institute of Dublin, Tallaght.</p>
+					<p class="text-left">Graduated with an Ordinary Bachelor of Science Degree from Computing Level 7 and currently working towards an Honours Level 8 Degree for 2020.</p>
+					<p class="text-left">Core Technical Skills include Java, SQL, Bash Scripting, Git Distributed Version Control, and Data Analysis.</p>
+					<p class="text-left">Previous Tech Industry work experience includes SAP Service and Support Ltd. as part of their Intern Experience Project (iXp).</p>
+					<p class="text-left">General Interests Include: Hiking, Cycling, Reading, Programming, Strategy Games, and Custom Collectables.</p>
+					
+					<!--Div for buttons (CV Download & Contact Me modal)-->
+					<div id="aboutButtons">
+					<!--CV Download - inlined Javascript-->
+					<button type="button" id="docDL" class="btn btn-success">Download my CV</button>
+					<!--Contact Me Modal Button-->
+					 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Contact Me</button>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+</div><!--End of About Me-->
+
+<!--Jumbotron w/ Image background - Education, Experience, & Skills-->
+<!--Ref: https://bootstrapcreative.com/pattern/jumbotron-background-image-opacity-bootstrap-4/ -->
+<div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://placeimg.com/1690/480/arch)">
+	<div class="container">
+		<h1 class="display-4">Education, Experience, and Skills</h1>
+		<hr class="my-4">
+		<p class="lead">Education History, Courses, Grades, Industry/Personal Experience, Projects, and Skills. </p>
+	</div>
+</div><!--End of Jumbotron-->
+
+
+<!--Education-->
+<div id="education">
+	<h1 class="display-3">Education History</h1>
+		<div class="container-fluid">
+			<div class="row">
+				<!--Image Thumbnail w/ Link-->
+				<span class="border border-primary">
+				<a href="https://www.it-tallaght.ie/">
+					<!--Image, float-left-->
+					<img src="images/TUD_Logo.png" class="float-left" alt="TUD_Logo" width="1024" height="600">
+				</a>
+				</span>
+				<!--Edu Info -->
+				<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+					<h1 class="text-left"><strong>Technological Univarsity of Dublin, Tallaght Campus</strong></h1>
+					<h4 class="lead"><strong>Address: Institute of Technology Tallaght, Dublin 24</strong></h4>
+					<h5 class="lead"><strong>2016 - To Date: Honours Bachelor of Science in Computing</strong></h5>
+					<h5 class="lead"><strong>Previously graduated with a Ordinary Bachelor of Science in Computing in 2019.</strong></h5>
+					<dl>
+						<dt>Current Modules:</dt>
+							<dd>- Interactive Media Design and Visualisation</dd>
+							<dd>- Entrprise Applications Development</dd>
+							<dd>- Security for Cloud & Internet of Things</dd>
+							<dd>- Entrprise Performance Architecture</dd>
+							<dd>- Information Management</dd>
+							<dd>- 4th Year Project - Java Android Application</dd>
+					</dl>
+					<a href="https://www.it-tallaght.ie/index.cfm/page/course?code=TA_KACOS_B">More information about the Course can be found here.</a>
+				</div>
+			</div>
+		</div>
+</div><!--End of Education-->
+
+<!--Grades, pills with tabs-->
+<!--Ref Toggleable/Dynamic Tabs: https://www.w3schools.com/bootstrap4/bootstrap_navs.asp --> 
+<div id="grades">
+	<h1 class="display-3">Grades</h1>
+	<div class="container-fluid">
+			<p>Grades and GPAs from 1st Year to 4th Year in descending order from the current year.</p>
+			<p class="lead">4th Year GPA: TBD</p>
+			<p class="lead">3rd Year GPA: 2.33</p>
+			<p class="lead">2nd Year GPA: 2.58</p>
+			<p class="lead">1st Year GPA: 3.17</p>
+		<br>
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" data-toggle="tab" href="#fourth">4th Year - 2019/2020</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#third">3rd Year - 2018/2019</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#second">2nd Year - 2017/2018</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#first">1st Year - 2016/2017</a>
+			</li>
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<!--fourth year-->
+			<div id="fourth" class="container tab-pane active"><br>
+				<!--table-->
+				<table class="table">
+					<!--table head-->
+					<thead>
+						<tr>
+						<th>Module</th>
+						<th>Grade</th>
+					</tr>
+					</thead>
+					<!--table body-->
+					<tbody>
+						<tr>
+							<td>4th Year Project - Java Native-Android Application</td>
+							<td>TBD</td>
+						</tr>
+						<tr>
+							<td>Enterprise Applications Development 1</td>
+							<td>TBD</td>
+						</tr>
+						<tr>
+							<td>Enterprise Performance Architecture</td>
+							<td>TBD</td>
+						</tr>
+						<tr>
+							<td>Security for Cloud & Internet of Things</td>
+							<td>TBD</td>
+						</tr>
+						<tr>
+							<td>Information Management</td>
+							<td>TBD</td>
+						</tr>
+						<tr>
+							<td>Interactive Media Design & Visualisation</td>
+							<td>TBD</td>
+						</tr>
+					</tbody>
+				</table><!--End of Table-->
+			</div><!--End fourth year-->
+			
+			<!--third year-->
+			<div id="third" class="container tab-pane fade"><br>
+				<!--table-->
+				<table class="table">
+					<!--table head-->
+					<thead>
+						<tr>
+						<th>Module</th>
+						<th>Grade</th>
+					</tr>
+					</thead>
+					<!--table body-->
+					<tbody>
+						<tr>
+							<td>Data Structures & Algorithms</td>
+							<td>C+</td>
+						</tr>
+						<tr>
+							<td>Cloud Services & Distributed Computing</td>
+							<td>C+</td>
+						</tr>
+						<tr>
+							<td>Data Analysis</td>
+							<td>C+</td>
+						</tr>
+						<tr>
+							<td>Advanced Databases</td>
+							<td>C+</td>
+						</tr>
+						<tr>
+							<td>Operating Systems</td>
+							<td>C</td>
+						</tr>
+						<tr>
+							<td>Server-side Development</td>
+							<td>C</td>
+						</tr>
+					</tbody>
+				</table><!--End of Table-->
+			</div><!--End Third year-->
+			
+			<!--second Year-->
+			<div id="second" class="container tab-pane fade"><br>
+				<!--table-->
+				<table class="table">
+					<!--table head-->
+					<thead>
+						<tr>
+						<th>Module</th>
+						<th>Grade</th>
+					</tr>
+					</thead>
+					<!--table body-->
+					<tbody>
+						<tr>
+							<td>Information Security</td>
+							<td>B-</td>
+						</tr>
+						<tr>
+							<td>Object Orientated Design and Analysis</td>
+							<td>B</td>
+						</tr>
+						<tr>
+							<td>Management Science</td>
+							<td>C</td>
+						</tr>
+						<tr>
+							<td>Networking 2</td>
+							<td>B-</td>
+						</tr>
+						<tr>
+							<td>Software Development 4</td>
+							<td>C+</td>
+						</tr>
+						<tr>
+							<td>2nd Year Project - Play Framework Website</td>
+							<td>D</td>
+						</tr>
+						<tr>
+							<td>Web & Moble Design & Development</td>
+							<td>B-</td>
+						</tr>
+						<tr>
+							<td>Dicrete Mathematics 2</td>
+							<td>B+</td>
+						</tr>
+						<tr>
+							<td>Database Design & Programming</td>
+							<td>C</td>
+						</tr>
+						<tr>
+							<td>Networking 1</td>
+							<td>C</td>
+						</tr>
+						<tr>
+							<td>Software Quality Assurance & Testing</td>
+							<td>B+</td>
+						</tr>
+						<tr>
+							<td>Software Development 3</td>
+							<td>B-</td>
+						</tr>
+					</tbody>
+				</table><!--End of Table-->
+			</div><!--End of second year-->
+			
+			<!--first year-->
+			<div id="first" class="container tab-pane fade"><br>
+				<!--table-->
+				<table class="table">
+					<!--table head-->
+					<thead>
+						<tr>
+						<th>Module</th>
+						<th>Grade</th>
+					</tr>
+					</thead>
+					<!--table body-->
+					<tbody>
+						<tr>
+							<td>Computer Architecture</td>
+							<td>B+</td>
+						</tr>
+						<tr>
+							<td>Business & Information Systems</td>
+							<td>B+</td>
+						</tr>
+						<tr>
+							<td>Learning to Learn at Third Level</td>
+							<td>A</td>
+						</tr>
+						<tr>
+							<td>Discrete Mathematics</td>
+							<td>B-</td>
+						</tr>
+						<tr>
+							<td>Software Development 1</td>
+							<td>B+</td>
+						</tr>
+						<tr>
+							<td>Fundamentals of Interface and Web Design</td>
+							<td>B-</td>
+						</tr>
+						<tr>
+							<td>Social Media Communications</td>
+							<td>B+</td>
+						</tr>
+						<tr>
+							<td>Database Fundamentals</td>
+							<td>B</td>
+						</tr>
+						<tr>
+							<td>Operation Systems Fundamentals</td>
+							<td>B-</td>
+						</tr>
+						<tr>
+							<td>Statistics</td>
+							<td>B-</td>
+						</tr>
+						<tr>
+							<td>Software Development 2</td>
+							<td>B</td>
+						</tr>
+						<tr>
+							<td>Object Orientated Systems Analysis</td>
+							<td>B</td>
+						</tr>
+					</tbody>
+				</table><!--End of Table-->
+			</div><!--End of first year-->
+			
+		</div><!--End of tab content-->
+	</div>
+</div><!--End of Grades-->
+
+
+<!--Work Experience-->
+<div id="workExp">
+	<h1 class="display-3">Industry Experience</h1>
+		<div class="container-fluid">
+			<div class="row">
+				<!--Image Thumbnail w/ Link-->
+				<span class="border border-primary">
+				<a href="https://www.sap.com">
+					<!--Image, float-left-->
+					<img src="images/SAP_Logo.png" class="float-left" alt="SAP_Logo" width="1200" height="612">
+				</a>
+				</span>
+				<!--WorkExp Info -->
+				<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+					<h1 class="text-left"><strong>SAP Service & Support Ireland Limited (Dublin)</strong></h1>
+					<h4 class="lead"><strong>January 2019 - August 2019</strong></h4>
+					<h4 class="lead"><strong>Role: Center of Expertise Support Engineer - Intern Experience Project (iXp)</strong></h4>
+					<dl>
+						<dt>Roles & Responsibilities:</dt>
+							<dd>- Remote Customer Support & System Implementation</dd>
+							<dd>- Database Diagnosis and Optimization Recommendations</dd>
+							<dd>- Development of SAP Products & Systems </dd>
+							<dd>- Design & Develop SAP Employee Applications</dd>
+							<dd>- Delivery of Assessment & Optimization Services</dd>
+							<dd>- Knowledge Transfer for SAP Employees and Customers</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+</div><!--End of Work Exp-->
+
+<!--Projects-->
+<!--Carousel of Pictures, Jump to Section about Project Desc. when on picture-->
+<!--Ref: https://www.w3schools.com/bootstrap4/bootstrap_carousel.asp -->
+<div id"demo" class="carousel slide" data-ride="carousel" style="margin-left: 5em; padding-top: 1em; padding-bottom: 5em;">
+	<h1 class="display-3">Projects</h1>
+	<p class="lead">Here are some of the Projects that I have taken part in during the last few years.</p>
+		<div class="container-fluid">
+			<!-- Indicators -->
+			<ul class="carousel-indicators">
+				<li data-target="#demo" data-slide-to="0" class="active"></li>
+				<li data-target="#demo" data-slide-to="1"></li>
+				<li data-target="#demo" data-slide-to="2"></li>
+			</ul>
+
+			<!-- The slideshow -->
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="images/android-black.jpg" alt="androidProj" width="1200" height="500">
+				</div>
+				<div class="carousel-item">
+					<img src="images/SAP_Logo.png" alt="sapProj" width="1200" height="500">
+				</div>
+				<div class="carousel-item">
+					<img src="images/playFW-black.png" alt="PlayFWProj width="1200" height="500"">
+				</div>
+			</div>
+
+			<!-- Left and right controls -->
+			<a class="carousel-control-prev" href="#demo" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</a>
+			<a class="carousel-control-next" href="#demo" data-slide="next">
+				<span class="carousel-control-next-icon"></span>
+			</a>
+		</div>
+</div><!--End of Carousel-->
+
+<!--Project Desc. Dynamic Tabs -->
+<!--Ref Toggleable/Dynamic Tabs: https://www.w3schools.com/bootstrap4/bootstrap_navs.asp --> 
+<div id="projects">
+		<div class="container-fluid">
+		
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" data-toggle="tab" href="#projFourth">4th Year - Java Native-Android Project (Apnoeatude)</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#projThird">SAP iXp - SAP Fiori Application</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#projSecond">2nd Year - Play Framework Web Application</a>
+				</li>
+			</ul>
+			
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div id="projFourth" class="container tab-pane active"><br>
+					<h2>Description:</h2>
+					<p>A single-person project that involves the development of a choosen project proposal. I had chosen to reseach and develop a Java-based native-android application that focuses on sleep analysis through sound recording. The application carries out an analysis of the user's snoring patterns through the smartphone's microphone, records the hours slept, hours lost, and stores the results inside the external Firebase Realtime Database. The main purpose of the application is to help users improve their sleeping habits, help raise awareness of sleep apnoea, and make users aware of the long-term health issues that stem from poor sleeping habits and sleep apnoea.</p>
+					
+					<h2>Issues Faced:</h2>
+					<p>- Priority of which part to develop first.</p>
+					<p>- Calculations for analysis of sound files.</p>
+					<p>- Tailoring results to recommendations on how to improve sleeping habits.</p>
+					<p>- Development of Android Applications (First Time).</p>
+					<p>- Security of Android Applications and it'sexternal platforms.</p>
+					
+					<h2>Tools and Technology Used:</h2>
+					<p>- Java API Framework</p>
+					<p>- Firebase Platform (NoSQL Realtime Database, Security Rules and Authentication)</p>
+					<p>- Android Studio</p>
+					<p>- Google Analytics, Google Maps, and Google Charts API's</p>
+					<p>- Google Playstore</p>
+					<p>- Microsoft Azure Development Pipeline</p>
+					<p>- Microsoft Excel</p>
+					<p>- Microsoft Word</p>
+					<p>- Github Distributed Version Control</p>
+					
+				</div>
+				
+				<div id="projThird" class="container tab-pane fade"><br>
+					<h2>Description:</h2>
+					<p>An eight-man project which consisted of four developers, one development lead, two business analysts, and one scrum master. Our task was to create a SAP-based application to solve a problem with chain email communications within the workplace. Using SAP Fiori, SAPUI5, HTML5, Javascript, SQL and the Scrum Agile Process Framework, we coordinated and elegated work and tasks through daily and weekly team meetings. Using these meetings to discuss progress, blockers, and plans of approach for features, functionality, and layout. </p>
+					
+					<h2>Issues Faced:</h2>
+					<p>- User Roles and Views</p>
+					<p>- Database Management</p>
+					<p>- Data Filtering</p>
+					<p>- Features Clashing with User Interface</p>
+					<p>- Time Constraints for Development, Testing, and Implementation of Features</p>
+					
+					<h2>Tools and Technology Used:</h2>
+					<p>- SAP Fiori Application Platform</p>
+					<p>- SAP UI5</p>
+					<p>- HTML5</p>
+					<p>- Javascript</p>
+					<p>- SAP HANA Database</p>
+					<p>- SAP Web IDE for SAP HANA</p>
+					<p>- Microsoft Teams</p>
+					<p>- Microsoft Powerpoint</p>
+					<p>- Microsoft Word</p>
+					<p>- Slack</p>
+					<p>- Github Distributed Version Control</p>
+				</div>
+				
+				<div id="projSecond" class="container tab-pane fade"><br>
+					<h2>Description:</h2>
+					<p>A three-man group project where we had to use our knowledge of Software Development, Website Design, Database Design, and UML to design, build, and code a fully functional website using Play Framework over the course of the second semester of our Second year. Our Website was an online music store, where the user could register, and log into their account. Browse and order music with a functional shopping cart, order system, and payment system.</p>
+					
+					<h2>Issues Faced:</h2>
+					<p>- Time and Communication Constraints</p>
+					<p>- Work Delegation Issues for Aspects of the Website</p>
+					<p>- Internal Software/Coding Issues that left Logical Errors</p>
+					<p>- Inability to finalise certain design elements</p>
+					
+					<h2>Tools and Technology Used:</h2>
+					<p>- Microsoft Word</p>
+					<p>- IBM Watson Workspace</p>
+					<p>- Javascript</p>
+					<p>- Stripe.js</p>
+					<p>- HTML5</p>
+					<p>- Bootstrap 3</p>
+					<p>- CSS</p>
+					<p>- Visual Paradigm</p>
+					<p>- Microsoft Excel</p>
+					<p>- Github Distributed Version Control</p>
+				</div>
+			</div>
+		</div>
+</div>
+<!--End of Projects-->
+
+
+<!--Prersonal, Dynamic Tabs-->
+<!--Ref Toggleable/Dynamic Tabs: https://www.w3schools.com/bootstrap4/bootstrap_navs.asp --> 
+<div id="personal">
+	<h1 class="display-3">Personal/Volunteering Experience</h1>
+		<p class="lead">Here are some activities and outings that I have volunteered in.</p>
+
+		<div class="container-fluid">
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" data-toggle="tab" href="#persOne">Tutor - President's Volunteer Programme (Maths)</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#persTwo">Beta Tester - Stride, peer-based networking App. Start up.</a>
+				</li>
+			</ul>
+			
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div id="persOne" class="container tab-pane active"><br>
+					<h2>Description</h2>
+					<p>Between Feb 2018 to March 2018, College Students volunteered to assist Secondary School Students in various Subjects in Leaving Certificate Mathematics.</p>
+					
+					<h2>Main Responsibilites</h2>
+					<p>Directly assisted groups of selected students with the various issues they encountered in Secondary-Level Maths on a week-by-week basis.</p>
+				</div>
+				
+				<div id="persTwo" class="container tab-pane fade"><br>
+					<h2>Description</h2>
+					<p>May 18th, 2018. College Students volunteered to volunteer to test a new work-in-progress App called Stride. A peer-based networking where teachers, students, and figures can voice their experiences and give advice to users..</p>
+					
+					<h2>Main Responsibilites</h2>
+					<p>Tested a Beta version of the app for Android. Reporting any bugs and errors to the team, and gave suggestions for the app. </p>
+				</div>
+			</div>
+		</div>
+</div><!--End of personal-->
+
+<!--Skills Unordered List, Strongest first--> 
+<div id="skills">
+	<h1 class="display-3">Technical Skills</h1>
+	<p class="lead">Industry centered skills that I have experience in and have been exposed to over the years.</p>
+	
+	<!--Unordered List-->
+	<ul>
+		<li>Trained to operate and use SAP-Based systems like the HANA Database or SAP GUI Tools</li>
+		<li>Confident Developer in Java</li>
+		<li>Intermediate at writing SQL queries for Relational Databases</li>
+		<li>Skilled at the use of Git Distributed Version Control (Github)</li>
+		<li>Capable at designing and developing websites using Javascript, HTML5, CSS, Bootstrap 4, with use of Play Framework </li>
+		<li>Understanding of Data Structures and Algorithims through C++</li>
+		<li>Experience with fundamentals of C# and Razor Pages with the .Net Framework</li>
+		<li>Knowledgable in analysis and interpretation of Statistical Data and Datasets with Tableau</li>
+		<li>Core Understanding of User Design and Experience with User Interfaces</li>
+		<li>Can design and analyse systems using UML</li>
+		<li>Competent user of Windows and Linux Operating Systems like Ubuntu(64 bit) in system administration.</li>
+		<li>Have the ability to design, build, and troubleshoot an network using routers, hubs, and end devices using related tools</li>
+		<li>Can configure a router using the Cisco IOS command set.</li>
+		<li>Able of writing scripts using Windows Powershell and Bash on Linux OS</li>
+		<li>Skilled at writing reports and powerpoint presentations</li>
+		<li>Beginner in the field of Android Applications Development</li>
+	</ul>
+</div><!--End of Skills-->
+
+
+<!--Jumbotron w/ Image background - Hobbies and Interests -->
+<!--Ref: https://bootstrapcreative.com/pattern/jumbotron-background-image-opacity-bootstrap-4/ -->
+<div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(https://placeimg.com/1690/480/nature/grayscale)">
+	<div class="container">
+		<h1 class="display-4">Hobbies and Interests</h1>
+		<hr class="my-4">
+		<p class="lead">Here you get to know me on a more personal level through my general interests and hobbies that I like!</p>
+	</div>
+</div><!--End of Jumbotron-->
+
+<!--Hobbies and Interests, use card deck-->
+<!--Ref Cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp  -->
+<div id="hobbies">
+	<h1 class="display-3">Hobbies and Interests</h1>
+	<p class="lead">General Hobbies and Interests that I love to partake in my spare time.</p>
+	
+	<!--Card Deck-->
+	<div class="card-deck" style="padding-right: 3em;">
+	
+		<div class="card">
+			<img class="card-img-top" src="images/hiking.jpg" alt="Hiking" style="width:100%">
+			<div class="card-body">
+				<h4 class="card-title">Hiking</p>
+				<p class="card-text">Go out hillwalking with friends and family when I have the time.</p>
+			</div>
+		</div>
+	
+		<div class="card">
+			<img class="card-img-top" src="images/cycling.jpg" alt="Cycling" style="width:100%">
+			<div class="card-body">
+				<h4 class="card-title">Cycling</p>
+				<p class="card-text">Go on cycling routes and trails with friends and family on holidays.</p>
+			</div>
+		</div>
+	
+		<div class="card">
+			<img class="card-img-top" src="images/reading.jpg" alt="Reading" style="width:100%">
+			<div class="card-body">
+				<h4 class="card-title">Reading</p>
+				<p class="card-text">Enjoy reading factual and fictional novels in my spare time.</p>
+			</div>
+		</div>
+    
+	</div><!--End of deck-->
+	
+	<!--Card Deck-->
+	<div class="card-deck" style="padding-top:2em; padding-right: 3em;">
+		<div class="card">
+			<img class="card-img-top" src="images/collectable.jpg" alt="Model" style="width:100%">
+			<div class="card-body">
+				<h4 class="card-title">Custom Collectables</p>
+				<p class="card-text">Collect and make custom figures and models in my spare time.</p>
+			</div>
+		</div>
+	
+		<div class="card">
+		<img class="card-img-top" src="images/boardgame.jpg" alt="Boardgames" style="width:100%">
+			<div class="card-body">
+				<h4 class="card-title">Strategy Games</p>
+				<p class="card-text">Partake in Strategy Board and Card Games with friends on a daily basis.</p>
+			</div>
+		</div>
+	
+		<div class="card">
+			<img class="card-img-top" src="images/program.jpg" alt="Program" style="width:100%">
+			<div class="card-body">
+				<h4 class="card-title">Recreational Programming</p>
+				<p class="card-text">Work on some small side projects like minigames with Pygame for example.</p>
+			</div>
+		</div>
+    
+	</div><!--End of deck-->
+</div><!--End of hobbies-->
+
+<!--Modal Logic-->
+<!--Ref: https://www.w3schools.com/bootstrap4/bootstrap_modal.asp-->
+<!-- The Modal -->
+<div class="modal" id="myModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+      
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<i class='fas fa-user-friends' style='font-size:36px'></i>
+				<h4 class="modal-title">Contact Me!</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div><!--End of Header-->
+        
+			<!-- Modal body -->
+			<div class="modal-body">
+				<p>I currently have both a Gmail address and LinkedIn account that I use to contact & connect with people.</p>
+				<p>Don't be aftraid to drop me a message or just touch bases with me on these platforms!</p>
+				<div class="list-group">
+					<!--email icon and address, and linked in account link-->
+					<i class='fas fa fa-envelope' style='font-size:36px'></i>
+					<a href="https://www.google.com/gmail/about/">sean.slattery066@gmail.com</a>
+					<!--LinkedIn Profile & address (LinkedIn icon is not showing)-->
+					<i class="fa fa-comment" style="font-size:36px"></i>
+					<a href="https://www.linkedin.com/in/sean-slattery-066/">LinkedIn Profile</a>
+				</div><!--End of List Group-->
+			</div><!--End of Body-->
+        
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+			</div><!--End of Footer-->
+			
+		</div><!--End of Modal Content-->
+    </div><!--End of Modal Dialog-->
+</div><!--End of Modal-->
+
+</body>
+</html>
